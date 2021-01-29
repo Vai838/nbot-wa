@@ -1,40 +1,40 @@
 // Config
 var config = {
-    botName: '🔹 𝙉 O T 🔹',
-    operator: ['6281515860089'],
+    botName: '🔹 V b O T 🔹',
+    operator: ['917306030148'],
     prefix: process.env.prefix ? new RegExp('^' + process.env.prefix) : /^[°•π÷×¶∆£¢€¥®™✓_=|~!?@#$%^&.\/\\©^]/,
     downloadStatus: false, // Curi Status Orang :|
     devMode: false, // true,
     msg: {
-        notAdmin: '🔰 Maaf anda bukan admin grup',
-        notGroup: '👨‍👩‍👧‍👦 Fitur ini hanya bisa digunakan di grup',
-        notBotAdmin: '🔰 Bot belum menjadi admin grup',
-        notURL: '🌐 Tidak ada URL',
-        noMedia: '📷 Tidak ada Media',
-        noArgs: '❓ Tidak ada argumen',
-        noJid: '❓ Tidak ada @user yang disebut',
-        notAllowed: `❌ Fitur ini tidak bisa kamu gunakan`,
-        add: '➕ Menambahkan:\n',
-        remove: '➖ Mengeluarkan:\n',
-        promote: '🔰 Menambahkan:\n',
-        demote: '🙍‍♂️ Menurunkan:\n',
-        self: 'Kok aku?',
+        notAdmin: '🔰 Sorry you are not a group admin',
+        notGroup: '👨‍👩‍👧‍👦 This feature can only be used in groups',
+        notBotAdmin: '🔰 The bot is not yet a group admin',
+        notURL: '🌐 No URL',
+        noMedia: '📷 No Media',
+        noArgs: '❓ No Argument',
+        noJid: '❓ No @user was mentioned',
+        notAllowed: `❌ You cannot use this feature`,
+        add: '➕ Add:\n',
+        remove: '➖ Remove:\n',
+        promote: '🔰 Promote:\n',
+        demote: '🙍‍♂️ Demote:\n',
+        self: 'How can I?',
         dev: '👨‍💻 Fitur masih dalam tahap pengembangan 🔧',
         devOff: '🔧 Fitur dinonaktifkan oleh developer',
-        groupOff: '❌ Fitur dinonaktifkan untuk grup ini',
-        success: '✅ Sukses',
-        success: '❌ Gagal',
+        groupOff: '❌ Features are disabled for this group',
+        success: '✅ Success',
+        success: '❌ Failed',
         list: value => `- ${value}`,
         listUser: user => `- @${user.replace(/^@?|@c.us$/, '')}`,
-        promoteEach: user => `- @${user} menjadi Admin 🔰`,
-        demoteEach: user => `- @${user} menjadi Member 🙍‍♂️`,
-        promoteFail: user => `- @${user} sudah menjadi Admin 🔰`,
-        demoteFail: user => `- @${user} sudah menjadi Member 🙍‍♂️`,
+        promoteEach: user => `- @${user} Becomes Admin 🔰`,
+        demoteEach: user => `- @${user} Becomes Member 🙍‍♂️`,
+        promoteFail: user => `- @${user} already an Admin 🔰`,
+        demoteFail: user => `- @${user} already an Member 🙍‍♂️`,
         promoteFormat: (success, failed) => config.msg.promote + success.map(config.msg.promoteEach).join('\n') + '\n' + failed.length > 0 ? failed.map(config.msg.promoteFail).join('\n') : '',
         demoteFormat: (success, failed) => config.msg.demote + success.map(config.msg.demoteEach).join('\n') + '\n' + failed.length > 0 ? failed.map(config.msg.demoteFail).join('\n') : '',
         yt: (title, filesize) => `*${title}*\n\n💾 Filesize: ${filesize}`,
-        recommend: (prefix, command) => `Direkomendasikan pakai *${prefix + command}*`,
-        sizeExceed: size => `❌ Ukuran file melebihi batas yang ditentukan\n💾 Filesize: *${size}*\n📈 Limit: *${config.sizeLimit} MB*`,
+        recommend: (prefix, command) => `Recommended use *${prefix + command}*`,
+        sizeExceed: size => `❌ The file size exceeds the specified limit\n💾 Filesize: *${size}*\n📈 Limit: *${config.sizeLimit} MB*`,
         waitConvert: (a, b, desc) => `⏱ Tunggu beberapa detik!\nSedang melakukan proses konversi *${a}* → *${b}*${desc ? `\n\n${desc.split('\n').map(v => `_${v}_`).join('\n')}` : ''}`,
         broadcast: (sender, msg) => `📢 *BROADCAST* 📢\n_From: @${sender.id}_\n\n${msg}`,
         error: e => `⚠ *ERROR* ⚠\n\n${e}`,
@@ -43,8 +43,8 @@ var config = {
                 case 'video':
                     return `
 *${item.type}*
-├> Judul: ${item.title}
-├> Durasi: ${item.duration[0]} (${item.duration[1]})
+├> Title: ${item.title}
+├> Duration: ${item.duration[0]} (${item.duration[1]})
 ├> Channel: ${item.author.name} ${item.author.verified ? item.author.verified == 'artist' ? '🎶' : '✅' : ''}
 ├> Link: ${item.link}
 ├> Deskripsi: ${item.description}
@@ -52,17 +52,17 @@ var config = {
                 case 'channel':
                     return `
 *${item.type}*
-├> Nama: ${item.title} ${item.verified ? item.verified == 'artist' ? '🎶' : '✅' : ''}
-├> Jumlah Video: ${item.videoCount}
+├> Name: ${item.title} ${item.verified ? item.verified == 'artist' ? '🎶' : '✅' : ''}
+├> Total Video: ${item.videoCount}
 ├> Subscriber: ${item.subscriberCount}
 ├> Link: ${item.link}
-├> Deskripsi: ${item.description}
+├> Deskription: ${item.description}
 `.slice(1, -1)
             }
         }
     },
-    iklan: [
-        'Anda butuh API? Sini aja:v https://st4rz.herokuapp.com (Iklan by https://wa.me/6285221100126)',
+    advertisement: [
+        'Anda butuh API? Sini aja:v https://st4rz.herokuapp.com (Iklan by https://wa.me/917306030148)',
         // 'Grup: https://chat.whatsapp.com/EN08hYxatxgJXdxo9dsART',
         'Github: https://github.com/Nurutomo/nbot-wa',
         'API: https://repl.it/@Nurutomo/MhankBarBar-Api',
@@ -351,7 +351,7 @@ cmd.on('sgif', /^(sti(c|)kergif|gifsti(c|)ker|sgif)$/i, async function (client =
     if ((isMedia || isQuotedVideo || isQuotedFile) && this.args.length === 0) {
         const encryptMedia = isQuotedVideo || isQuotedFile ? quotedMsg : message
         const mimetype = encryptMedia.mimetype
-        client.reply(from, config.msg.waitConvert(mimetype.replace(/.+\//, ''), 'webp', 'Stiker itu pakai format *webp*'), id)
+        client.reply(from, config.msg.waitConvert(mimetype.replace(/.+\//, ''), 'webp', 'The sticker is on format *webp*'), id)
         if (/image/.test(mimetype)) client.reply(from, config.msg.recommend(this.usedPrefix, 'stiker'), id)
         console.log(color('[WAPI]'), 'Downloading and decrypting media...')
         const mediaData = await decryptMedia(encryptMedia)
@@ -492,7 +492,7 @@ cmd.on('resend', /^(re(send|post)|to(img|image))$/i, async function (client = ne
         const mediaData = await decryptMedia(encryptMedia)
 
         if (encryptMedia.animated) {
-            client.reply(from, config.msg.waitConvert('webp', 'mp4', 'Kebalikan dari gifstiker'), id)
+            client.reply(from, config.msg.waitConvert('webp', 'mp4', 'The opposite of gif stickers'), id)
             const sticker = await stream2Buffer(write => {
                 ffmpeg(buffer2Stream(mediaData))
                     .format('mp4')
@@ -617,7 +617,7 @@ cmd.on('ig', /^ig(dl|)$/i, async function (client = new Client(), { from, id }) 
 })
 
 cmd.on('source', 'source', async function (client = new Client(), { from, id }) {
-    client.sendLinkWithAutoPreview(from, 'https://github.com/Nurutomo/nbot-wa', 'Repository:\nhttps://github.com/Nurutomo/nbot-wa')
+    client.sendLinkWithAutoPreview(from, 'https://github.com/Vai838/nbot-wa', 'Repository:\nhttps://github.com/Vai838/nbot-wa')
 })
 
 cmd.on('mp3', ['mp3', 'audio'], async function (client = new Client(), { from, id, isQuotedVideo, quotedMsg, message }) {
@@ -639,7 +639,7 @@ cmd.on('mp3', ['mp3', 'audio'], async function (client = new Client(), { from, i
     } else if (this.text) {
         let search = await ytsr(this.text)
         let ss = await ssPage(search.link, 1000)
-        client.sendFile(from, ss, 'yt.png', `Menampilkan hasil untuk ${search.correctQuery ? `*${search.correctQuery}* atau telusuri _${search.query}_` : `*${search.query}*`}\n\n${search.items.map(config.msg.ytsearch).join('\n\n')}`, id)
+        client.sendFile(from, ss, 'yt.png', `Returns the results for ${search.correctQuery ? `*${search.correctQuery}* or browse _${search.query}_` : `*${search.query}*`}\n\n${search.items.map(config.msg.ytsearch).join('\n\n')}`, id)
     }
 })
 
@@ -905,7 +905,7 @@ cmd.on('test', 'test', function (client = new Client(), { from, id }) {
 cmd.on('ytsr', /^((yt|youtube)(search|sr)|lagu|musik|nyanyi|sing|song|play)$/, async function (client = new Client(), { from, id }) {
     const search = await ytsr(this.text)
     const ss = await ssPage(search.link, 1000)
-    client.sendFile(from, ss, 'yt.png', `Menampilkan hasil untuk ${search.correctQuery ? `*${search.correctQuery}* atau telusuri _${search.query}_` : `*${search.query}*`}\n\n${search.items.map(config.msg.ytsearch).join('\n\n')}`, id)
+    client.sendFile(from, ss, 'yt.png', `Returns the results for ${search.correctQuery ? `*${search.correctQuery}* or browse _${search.query}_` : `*${search.query}*`}\n\n${search.items.map(config.msg.ytsearch).join('\n\n')}`, id)
 })
 
 cmd.on('deepfry', ['deepfry', 'goreng'], async function (client = new Client(), { from, id, isImage, isQuotedImage, isQuotedSticker, quotedMsg, message }) {
@@ -1170,24 +1170,24 @@ function showHelp(prefix, name = '', command) {
         ytmp3: `Download YouTube Mp3: *${prefix}ytmp3 https://youtu.be/VQMCJgWxUoE*`,
         ig: `Download postingan Instagram: *${prefix}ig https://www.instagram.com/p/CFs8MvLg0s_/?igshid=1982zv2awlaqj*`,
         nulis: `Nulis teks: *${prefix}nulis tulisan*`,
-    })[command] || 'Tidak ditemukan [404 Not Found]' : ''
+    })[command] || 'not found [404 Not Found]' : ''
     return `
 • *${config.botName}* •
 👋 Hai, ${name}!
 
-• *Info Tanda di Argumen* •
-Tanda *<>* = itu harus diisi
-Tanda *[]*  = tidak harus diisi
-Tanda *...* = dan seterusnya
-Tanda *|* = atau
-Tanda *@user* = di mention atau disebut
+• *Info Marks in Arguments* •
+sign *<>* = it must be filled in
+sign *[]*  = not required
+sign *...* = etc
+sign *|* = or
+sign *@user* = mentioned
 
 • Info Fitur •
 *${prefix}help* [command]${command ? `\n║\n║ *Info Fitur*:\n║ ${reference}` : ''}
 ${readMore}
 • *Menu Admin* •
-➕ *${prefix}add* <62XXXXXXXXXX1> [<62XXXXXXXXXXX> ...]
-➖ *${prefix}kick* <62XXXXXXXXXX1> [<62XXXXXXXXXXX> ...]
+➕ *${prefix}add* <62XXXXXXXXXX1> [<91XXXXXXXXXXX> ...]
+➖ *${prefix}kick* <62XXXXXXXXXX1> [<91XXXXXXXXXXX> ...]
 🔼 *${prefix}promote* <@user>
 🔽 *${prefix}demote* <@user>
 
@@ -1195,25 +1195,25 @@ ${readMore}
 🖼 *${prefix}stiker*
 📽 *${prefix}gifstiker*
 #️⃣ *${prefix}meme* <[atas|]bawah>
-#️⃣ *${prefix}memestiker* <[atas|]bawah>
+#️⃣ *${prefix}memestiker* <[on|]bring>
 ➡ *${prefix}resend*
-🎵 *${prefix}mp3* [pencarian]
-🔊 *${prefix}bass* [<desibel> <freqkuensi>]
+🎵 *${prefix}mp3* [search]
+🔊 *${prefix}bass* [<decibal> <frequency>]
 ℹ *${prefix}botstat*
 😂 *${prefix}distord*
 😂 *${prefix}deepfry*
 🌐 *${prefix}ssweb* <url>
 🌐 *${prefix}sswebf* <url>
-🔎 *${prefix}google* <pencarian>
-🔎 *${prefix}googlef* <pencarian>
-📄 *${prefix}nulis* <teks>
-📄 *${prefix}ttstiker* <teks>
-🔎 *${prefix}ytsr* <pencarian>
-🔺 *${prefix}follow* <namaIG>
+🔎 *${prefix}google* <search>
+🔎 *${prefix}googlef* <search>
+📄 *${prefix}nulis* <text>
+📄 *${prefix}ttstiker* <text>
+🔎 *${prefix}ytsr* <search>
+🔺 *${prefix}follow* <nameIG>
 
-• *Kerang Ajaib:v* •
-*${prefix}apakah* <pertanyaan>
-*${prefix}kapan* <pertanyaan>
+• *Magic Shell:v* •
+*${prefix}is* <question>
+*${prefix}when* <question>
 *${prefix}rate*
 
 • *Downloader* •
@@ -1227,7 +1227,7 @@ ${readMore}
 ❌ *${prefix}fb* <url>
 ❌ *${prefix}tiktok* <url>
 
-• *Butuh API* •
+• *need API* •
 - ${config.API.mhankbarbar.url}
 Cuma IG :|
 
@@ -1242,14 +1242,13 @@ Cuma IG :|
 • *Operator Only* •
 📢 *${prefix}broadcast* <text>
 
-• *Iklan* •
-${(config.iklan || []).map((iklan, i) => `${i + 1}. ${iklan}`).join('\n') || '_Tidak ada iklan_'}
+• *advertisement* •
+${(config.advertisement || []).map((advertisement, i) => `${i + 1}. ${advertisement}`).join('\n') || '_No advertisement_'}
 
-• *Bot Author* •
-𝙉𝙪𝙧𝙪𝙩𝙤𝙢𝙤 (Nurutomo)
-https://github.com/Nurutomo/
-Repo: https://github.com/Nurutomo/nbot-wa
-${readMore}wa.me/6281515860089
+• *Bot owner* •
+Vai838
+Repo: https://github.com/Vai838/nbot-wa
+${readMore}wa.me/917306030148
 `.slice(1, -1)
 }
 
