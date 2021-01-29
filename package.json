@@ -14,9 +14,9 @@
     "whatsapp",
     "template"
   ],
-  "author": "Nurutomo",
+  "author": "vai838",
   "repository": {
-    "url": "https://github.com/Nurutomo/nbot-wa.git"
+    "url": "https://github.com/Vai838/nbot-wa"
   },
   "license": "ISC",
   "dependencies": {
